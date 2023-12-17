@@ -1,0 +1,36 @@
+﻿@model curd.Models.addemp
+@{
+    ViewBag.Title = "addemp";
+}
+
+<h2>addemp</h2>
+
+@using(Html.BeginForm())
+            {
+<table>
+    <tr>
+        <td>@Html.LabelFor(e => e.empid) </td>
+        <td>@Html.EditorFor(e => e.empid)</td>
+        <td>@Html.ValidationMessageFor(e => e.empid)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(e => e.empname) </td>
+        <td>@Html.EditorFor(e => e.empname)</td>
+        <td>@Html.ValidationMessageFor(e => e.empname)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(e => e.city) </td>
+        <td>@Html.EditorFor(e => e.city)</td>
+        <td>@Html.ValidationMessageFor(e => e.city)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(e => e.address) </td>
+        <td>@Html.EditorFor(e => e.address)</td>
+        <td>@Html.ValidationMessageFor(e => e.address)</td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="save"/></td>
+    </tr>
+</table>
+            }
+

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<curd.Models.addemp>
+
+@{
+    ViewBag.Title = "getemp";
+}
+
+<h2>getemp</h2>
+
+<p>
+    @Html.ActionLink("Create New", "addemp")
+</p>
+<table border="1">
+    <tr>
+        <th>EmpID</th>
+        <th>Emp Name</th>
+        <th>City</th>
+        <th>Address</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(e => item.empid)
+            </td>
+            <td>
+                @Html.DisplayFor(e => item.empname)
+            </td>
+            <td>
+                @Html.DisplayFor(e => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(e => item.address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "updateemp", new {  id=item.empid }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.empid } , 
+               new { onclick = "return confirm('sure.?');" })
+            </td>
+        </tr>
+    }
+
+</table>
